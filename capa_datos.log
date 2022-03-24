@@ -1,0 +1,34 @@
+10:15:22 AM: DEBUG [Conexion.py:13] Mensaje a nivel DEBUG
+10:15:22 AM: INFO [Conexion.py:14] Mensaje a nivel info
+10:15:22 AM: WARNING [Conexion.py:15] Mensaje a nivel warning
+10:15:22 AM: ERROR [Conexion.py:16] Mensaje a nivel error
+10:15:22 AM: CRITICAL [Conexion.py:17] Mensaje a nivel critical
+10:34:38 AM: DEBUG [Conexion.py:13] Mensaje a nivel DEBUG
+10:34:38 AM: INFO [Conexion.py:14] Mensaje a nivel info
+10:34:38 AM: WARNING [Conexion.py:15] Mensaje a nivel warning
+10:34:38 AM: ERROR [Conexion.py:16] Mensaje a nivel error
+10:34:38 AM: CRITICAL [Conexion.py:17] Mensaje a nivel critical
+10:36:54 AM: DEBUG [Persona.py:46] 
+            Id Persona:1, Nombre: Carlos,
+            Apellido: Prieto, Email: majora48@gmail.com
+        
+10:39:26 AM: DEBUG [Persona.py:46] 
+            Id Persona:None, Nombre: None,
+            Apellido: None, Email: None
+        
+10:39:51 AM: DEBUG [Persona.py:46] 
+            Id Persona:None, Nombre: None,
+            Apellido: None, Email: None
+        
+10:39:56 AM: DEBUG [Persona.py:46] 
+            Id Persona:None, Nombre: None,
+            Apellido: None, Email: None
+        
+10:39:56 AM: DEBUG [Persona.py:48] 
+            Id Persona:None, Nombre: Carlos,
+            Apellido: None, Email: None
+        
+02:14:59 PM: DEBUG [Conexion.py:24] Conexion exitosa:<connection object at 0x000001E000DF3450; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+02:14:59 PM: DEBUG [Conexion.py:36] Se abrio correctamente el cursor
+02:17:17 PM: DEBUG [Conexion.py:24] Conexion exitosa:<connection object at 0x0000026A81B33450; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+02:17:17 PM: DEBUG [Conexion.py:36] Se abrio correctamente el cursor
