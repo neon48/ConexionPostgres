@@ -51,8 +51,4 @@ class Conexion:
             return cls._cursor
 
 
-conex = Conexion()
-cursor = conex.obtenerCursor()
-sentencia= 'INSERT INTO persona(nombre, apellido, email) VALUES (%s,%s,%s)'
-valores=('Frailejon','Perez','asdasd@3232.com')
-cursor.execute(sentencia,valores)
+

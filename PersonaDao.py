@@ -26,14 +26,12 @@ class PersonaDao:
             return personas
 
     @classmethod
-    def insertar(cls):
-        with Conexion.obtenerConexion() as conexion:
+    def insertar(cls,Persona):
+        with Conexion.obtenerConexion():
             with Conexion.obtenerCursor() as cursor:
                 valores = (Persona.nombre, Persona.apellido, Persona.email)
                 cursor.execute(cls._INSERTAR,valores)
                 log.debug(f'Persona Insertada: {Persona}')
+                return cursor.rowcount
 
 
-persona1 = Persona(nombre='Carlos', apellido='Aguilar', email='asda@asda.com')
-personas_insertadas = PersonaDao.insertar(persona1)
-log.debug(f'personas insertadas: {personas_insertadas}')
