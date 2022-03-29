@@ -34,4 +34,26 @@ class PersonaDao:
                 log.debug(f'Persona Insertada: {Persona}')
                 return cursor.rowcount
 
+    @classmethod
+    def eliminar(cls,persona):
+        with Conexion.obtenerConexion():
+            with Conexion.obtenerCursor() as cursor:
+                valores = (persona.id_persona, )
+                cursor.execute(cls._ELIMINAR,valores)
+                log.debug(f'Persona Eliminada: {Persona}')
+                return cursor.rowcount
+
+    @classmethod
+    def actualizar(cls,persona):
+        with Conexion.obtenerConexion():
+            with Conexion.obtenerCursor() as cursor:
+                valores = (persona.nombre,persona.apellido,persona.email,persona.id_persona)
+                cursor.execute(cls._ACTUALIZAR,valores)
+                return  cursor.rowcount
+
+Persona_actualizar= Persona(22,'Perensejo','asda''232@123.com')
+persona_ectualizada = PersonaDao.actualizar(Persona_actualizar)
+log.debug(f'persona actualizada {persona_ectualizada}')
+
+
 
