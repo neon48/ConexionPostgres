@@ -1,6 +1,24 @@
+from Usuario import Usuario
+from cursor_del_pool import CursorDelPool
+from loger_base import log
+
 class UsuarioDao:
 
     '''
     DAO Data Access Objetc para la tabla de Usuario
     '''
+    _SELECT = 'SELECT * FROM usuario ORDER BY id_usuario'
+    _INSERTAR = 'INSERT INTO usuario(username, password) VALUES(%s, %s)'
+    _ACTUALIZAR = 'UPDATE usuario SET username = %s , password=%s WHERE id_usuario=%s'
+    _ELIMINAR = 'DELETE FROM usuario WHERE id_usuario = %s'
 
+    @classmethod
+    def seleccionar(cls):
+        with CursorDelPool() as cursor:
+            log.degug('Seleccionado Usuarios')
+            cursor.execute(cls._SELECT)
+            registros = cursor.fetchall()
+            usuarios = []
+            for registro in registros:
+                usuario = Usuario(registro[0],registro[1], registro[2])
+                usuarios.append(usuario)
