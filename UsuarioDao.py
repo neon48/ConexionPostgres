@@ -15,10 +15,36 @@ class UsuarioDao:
     @classmethod
     def seleccionar(cls):
         with CursorDelPool() as cursor:
-            log.degug('Seleccionado Usuarios')
+            log.debug('Seleccionado Usuarios')
             cursor.execute(cls._SELECT)
             registros = cursor.fetchall()
             usuarios = []
             for registro in registros:
                 usuario = Usuario(registro[0],registro[1], registro[2])
                 usuarios.append(usuario)
+            return usuarios
+
+    @classmethod
+    def insertar(cls,usuario):
+        with CursorDelPool() as cursor:
+            log.debug(f'Usuario a Insertar: {usuario}')
+            valores = (usuario.username, usuario.password)
+            cursor.execute(cls._INSERTAR,valores)
+            return  cursor.rowcount
+
+    @classmethod
+    def actualizar(cls,usuario):
+        with CursorDelPool() as cursor:
+            log.debug(f'Usuario a modificar {usuario}')
+            valores = (usuario.usarname, usuario.password, usuario.id_usuario)
+            cursor.execute(cls._ACTUALIZAR,valores)
+            return cursor.rowcount
+
+    @classmethod
+    def eliminar(cls, usuario):
+        with CursorDelPool() as cursor:
+            log.debug(f'Usuario a eliminar:{usuario}')
+            valores = (usuario.id_usuario,)
+            cursor.execute(cls._ELIMINAR,valores)
+            return cursor.rowcount
+

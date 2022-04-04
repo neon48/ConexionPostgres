@@ -16,10 +16,10 @@ class Usuario:
         self._id_usario=id_usuario
 
     @property
-    def usarname(self):
-        return self._usarname
-    @usarname.setter
-    def usarname(self,username):
+    def username(self):
+        return self._username
+    @username.setter
+    def username(self,username):
         self._usarname=username
 
     @property
